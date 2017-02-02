@@ -27,21 +27,29 @@
             android:id="@+id/plus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="30dp"
             android:text="+"/>
         <RadioButton
             android:id="@+id/minus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="30dp"
             android:text="-"/>
         <RadioButton
             android:id="@+id/kali"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="30dp"
             android:text="*"/>
         <RadioButton
             android:id="@+id/bagi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="30dp"
             android:text="/"/>
     </RadioGroup>
     <TextView
