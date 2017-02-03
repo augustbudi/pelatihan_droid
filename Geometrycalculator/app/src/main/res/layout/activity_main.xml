@@ -49,6 +49,25 @@
         android:gravity="center_vertical"
         android:text="Lebar"/>
 
+
+    <EditText
+        android:id="@+id/input3"
+        android:layout_below="@id/input2"
+        android:layout_alignParentRight="true"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"/>
+
+    <TextView
+        android:id="@+id/txt3"
+        android:layout_below="@id/input2"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/input3"
+        android:gravity="center_vertical"
+        android:text="Tinggi"/>
+
     <Button
         android:id="@+id/btn_calc"
         android:layout_below="@id/input2"
