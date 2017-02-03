@@ -4,5 +4,8 @@
         <item>Persegi</item>
         <item>Segitiga</item>
         <item>Lingkaran</item>
+        <item>Balok</item>
+        <item>Bola</item>
+
     </string-array>
 </resources>

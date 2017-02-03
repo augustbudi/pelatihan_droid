@@ -24,45 +24,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner.setOnItemSelectedListener(this);
 
     }
-    public  void calculate(View view) {
-        TextView input1 = (TextView) findViewById(R.id.input1);
-        TextView input2 = (TextView) findViewById(R.id.input2);
-        TextView input3 = (TextView) findViewById(R.id.input3);
-        Spinner spinner = (Spinner) findViewById(R.id.geometry);
-        double inp2 = 0, inp1 = 0, inp3 = 0;
-
-
-        String operator = spinner.getSelectedItem().toString();
-        String hasil = "";
-        inp1 = Double.parseDouble(input1.getText().toString());
-        if (input2.isEnabled()) {
-            inp2 = Double.parseDouble(input2.getText().toString());
-        }
-        if (input3.isEnabled()) {
-            inp3 = Double.parseDouble(input3.getText().toString());
-        }
-        if (operator.equalsIgnoreCase("Lingkaran")) {
-            hasil = "Luas dari Lingkaran Adalah: " + (Math.PI * (inp1 * inp1)) + "\n";
-            hasil += "Keliling dari Lingkaran Adalah: " + (Math.PI * (2 * inp1));
-        } else if (operator.equalsIgnoreCase("Segitiga")) {
-            hasil = "Luas dari segitiga siku-siku adalah: " + (0.5 * (inp1 * inp2)) + "\n";
-            double hyp = Math.sqrt((inp1 * inp1) + (inp2 * inp2));
-            hasil += "Keliling dari segitiga siku-siku adalah: " + (inp1 + inp2 + hyp);
-        } else {
-            hasil = "Luas dari Persegi adalah :" + (inp1 * inp2) + "\n";
-            hasil += "Keliling dari Persegi adalah :" + ((2 * inp1) * (2 * inp2)) + "\n";
-        }else if(operator.equalsIgnoreCase("Bola")) {
-            hasil = "Luas Permukaan dari Bola adalah : "+(4*Math.PI*inp1*inp1)+"\n";
-            hasil += "Volume dari Bola adalah : "+((4/3)*Math.PI*inp1*inp1*inp1)+"\n";
-        } else {
-            hasil = "Luas Permukaan dari Balok adalah : " + (2 * ((inp1 * inp2) + (inp1 * inp3) + (inp2 * inp3))) + "\n";
-            hasil += "Volume dari Balok adalah : " + (inp1 * inp2 * inp3) + "\n";
-
-
-            TextView result = (TextView) findViewById(R.id.result);
-            result.setText(hasil);
-        }
-    }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -72,13 +33,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         EditText input1 = (EditText) findViewById(R.id.input1);
         EditText input2 = (EditText) findViewById(R.id.input2);
         EditText input3 = (EditText) findViewById(R.id.input3);
-        TextView result=(TextView) findViewById(R.id.result);
-        String operator=parent.getItemAtPosition(position).toString();
-
-
-        operator = parent.getItemAtPosition(position).toString();
-        if(operator.equalsIgnoreCase("Lingkaran"))
-        {
+        TextView result = (TextView) findViewById(R.id.result);
+        String operator = parent.getItemAtPosition(position).toString();
+        if (operator.equalsIgnoreCase("Lingkaran")) {
             text1.setText("Jari-jari");
             input1.setText("");
             input2.setHeight(0);
@@ -88,9 +45,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             input3.setEnabled(false);
             text2.setText("");
             text3.setText("");
-        }
-        else if(operator.equalsIgnoreCase("Segitiga"))
-        {
+        } else if (operator.equalsIgnoreCase("Segitiga")) {
             text1.setText("Alas");
             input1.setText("");
             input2.setText("");
@@ -102,9 +57,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             input3.setEnabled(false);
             text2.setText("Tinggi");
             text3.setText("");
-        }
-        else if(operator.equalsIgnoreCase("Persegi Panjang"))
-        {
+        } else if (operator.equalsIgnoreCase("Persegi Panjang")) {
             text1.setText("Panjang");
             input1.setText("");
             input2.setText("");
@@ -115,9 +68,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             input3.setEnabled(false);
             text2.setText("Lebar");
             text3.setText("");
-        }
-        else if(operator.equalsIgnoreCase("Bola"))
-        {
+        } else if (operator.equalsIgnoreCase("Bola")) {
             text1.setText("Jari-jari");
             text2.setText("");
             text3.setText("");
@@ -127,9 +78,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             input3.setHeight(0);
             input2.setEnabled(false);
             input3.setEnabled(false);
-        }
-        else
-        {
+        } else {
             text1.setText("Panjang");
             text2.setText("Lebar");
             text3.setText("Tinggi");
@@ -147,5 +96,43 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    public void calculate(View view) {
+        EditText input1 = (EditText) findViewById(R.id.input1);
+        EditText input2 = (EditText) findViewById(R.id.input2);
+        EditText input3 = (EditText) findViewById(R.id.input3);
+        Spinner spinner = (Spinner) findViewById(R.id.geometry);
+        double inp2 = 0, inp1 = 0, inp3 = 0;
+
+        String operator = spinner.getSelectedItem().toString();
+        String hasil = "";
+        inp1 = Double.parseDouble(input1.getText().toString());
+        if (input2.isEnabled()) {
+            inp2 = Double.parseDouble(input2.getText().toString());
+        }
+        if (input3.isEnabled()) {
+            inp3 = Double.parseDouble(input3.getText().toString());
+        }
+        if (operator.equalsIgnoreCase("Lingkaran")) {
+            hasil = "Luas dari lingkaran adalah : " + (Math.PI * inp1 * inp1) + "\n";
+            hasil += "Keliling dari lingkaran adalah : " + (Math.PI * inp1) + "\n";
+        } else if (operator.equalsIgnoreCase("Segitiga")) {
+            hasil = "Luas dari segitiga adalah : " + (inp1 * inp2 / 2) + "\n";
+            double phy = Math.sqrt((inp1 * inp1) + (inp2 * inp2));
+            hasil += "Keliling dari segitiga adalah : " + (inp1 + inp2 + phy) + "\n";
+        } else if (operator.equalsIgnoreCase("Persegi Panjang")) {
+            hasil = "Luas dari persegi panjang adalah : " + (inp1 * inp2) + "\n";
+            hasil += "Keliling dari persegi panjang adalah : " + (2 * (inp1 + inp2)) + "\n";
+        } else if (operator.equalsIgnoreCase("Bola")) {
+            hasil = "Luas Permukaan dari Bola adalah : " + (4 * Math.PI * inp1 * inp1) + "\n";
+            hasil += "Volume dari Bola adalah : " + ((4 / 3) * Math.PI * inp1 * inp1 * inp1) + "\n";
+        } else {
+            hasil = "Luas Permukaan dari Balok adalah : " + (2 * ((inp1 * inp2) + (inp1 * inp3) + (inp2 * inp3))) + "\n";
+            hasil += "Volume dari Balok adalah : " + (inp1 * inp2 * inp3) + "\n";
+        }
+
+        TextView result = (TextView) findViewById(R.id.result);
+        result.setText(hasil);
     }
 }
