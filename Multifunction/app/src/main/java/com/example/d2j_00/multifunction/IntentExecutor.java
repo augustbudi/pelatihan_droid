@@ -24,7 +24,7 @@ public class IntentExecutor extends AppCompatActivity {
             btn.setText("Buka Browser");
         }else if (operator.equals("phone")){
             btn.setText("Hubungi No Telepon");
-        }else if (operator.equals("map")){
+        }else if (operator.equals("map")) {
             btn.setText("Buka Peta");
         }
     }
